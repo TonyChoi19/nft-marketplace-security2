@@ -4,7 +4,11 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        uber:[ "uber_move", "sans-serif" ],
+      },
+    },
   },
   plugins: [],
 }
