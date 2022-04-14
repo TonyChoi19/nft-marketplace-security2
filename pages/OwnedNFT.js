@@ -1,7 +1,7 @@
 import React, { useMemo, useEffect, useState } from 'react'
-import Header from '../../components/Header'
-import Footer from '../../components/Footer'
-import NFTs from './NFTs'
+import Header from '../components/Header'
+import Footer from '../components/Footer'
+import NFTs from '../components/trade/NFTs'
 import { useRouter } from 'next/router'
 import toast, { Toaster } from 'react-hot-toast'
 
@@ -17,7 +17,7 @@ const style = {
   rightSideWrapper: `lg:col-span-8 `,
 }
 
-const DopeNFTClub = (props) => {
+const OwnedNFT = (props) => {
   const { posts } = props
   const router = useRouter()
 
@@ -30,6 +30,39 @@ const DopeNFTClub = (props) => {
     }
   }, [])
 
+  if (!user) {
+    return (
+      <>
+        <Toaster />
+        <div className={style.splitter}>
+          {/* left side */}
+          <div className={style.background}>
+            <div className={style.infoContainer}>
+              <div className={style.pictureWrapper}>
+                <img
+                  className={style.clubPicture}
+                  src="https://lh3.googleusercontent.com/5LSMQsfk2kgkbTT0ih8TMrhoXDETO3inMahYX6-l-vMRkn-JNxOTubZQFPyDLt0JS5sNIFAQx7jgVLF56nO7OmHh0n7eD3mvCXDEvgE=s130"
+                  alt=""
+                />
+              </div>
+              <div className={style.desciptionWrapper}>
+                <h1 className={style.clubTitle}>My NFTs</h1>
+              </div>
+            </div>
+          </div>
+
+          {/* right side */}
+
+          <div className={style.rightSideWrapper}>
+            <Header />
+            <div className="grid gap-2 md:grid-cols-2 lg:min-h-screen lg:grid-cols-5"></div>
+            <Footer />
+          </div>
+        </div>
+      </>
+    )
+  }
+
   return (
     <>
       <Toaster />
@@ -40,16 +73,12 @@ const DopeNFTClub = (props) => {
             <div className={style.pictureWrapper}>
               <img
                 className={style.clubPicture}
-                src="https://lh3.googleusercontent.com/18cldSlheirQ9YT9_jjGm8Zm__SPXlrNQStKd7-lDQXUGNtXDwPk6gAh08OrGto8r-OFDe4gYkY9dmq7KnWNkh1s7HXMaM964cbR6A=w600"
+                src="https://lh3.googleusercontent.com/5LSMQsfk2kgkbTT0ih8TMrhoXDETO3inMahYX6-l-vMRkn-JNxOTubZQFPyDLt0JS5sNIFAQx7jgVLF56nO7OmHh0n7eD3mvCXDEvgE=s130"
                 alt=""
               />
             </div>
             <div className={style.desciptionWrapper}>
-              <h1 className={style.clubTitle}>Dope NFT Club</h1>
-              <h2 className={style.clubDesciption}>
-                Dope NFT Club launched as a fixed set of 10 items in mid-2017
-                and became one of the inspirations for the ERC-721 standard.
-              </h2>
+              <h1 className={style.clubTitle}>My NFTs</h1>
             </div>
           </div>
         </div>
@@ -61,16 +90,19 @@ const DopeNFTClub = (props) => {
 
           <div className="grid gap-2 md:grid-cols-2 lg:min-h-screen lg:grid-cols-5">
             {/* Map through all nfts */}
-            {posts.Results.map((nft) => (
-              <NFTs
-                id={nft.NFT_ID}
-                owner={nft.Owner}
-                onSale={nft.OnSale}
-                price={nft.Price}
-                collectionID={nft.Collection_ID}
-                image={nft.image}
-              />
-            ))}
+            {posts.Results.map(
+              (nft) =>
+                nft.Owner == user.ID && (
+                  <NFTs
+                    id={nft.NFT_ID}
+                    owner={nft.Owner}
+                    onSale={nft.OnSale}
+                    price={nft.Price}
+                    collectionID={nft.Collection_ID}
+                    image={nft.image}
+                  />
+                )
+            )}
           </div>
 
           <Footer />
@@ -104,4 +136,4 @@ export async function getStaticProps() {
   }
 }
 
-export default DopeNFTClub
+export default OwnedNFT

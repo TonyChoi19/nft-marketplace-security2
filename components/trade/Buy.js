@@ -1,4 +1,3 @@
-import React from 'react'
 const validate = async (NFTID_ToFind, USERID_ToFind) => {
   const errors = {}
   var NFTobj, USERobj, USERobj2

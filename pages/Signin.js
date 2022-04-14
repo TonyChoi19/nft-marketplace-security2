@@ -3,10 +3,10 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import { useState, useEffect } from 'react'
 import { check } from 'prettier'
-import { createHashPassword, isPasswordCorrect } from './query/handleHash'
-import { sendOTP } from './login/otp'
+import { createHashPassword, isPasswordCorrect } from '../components/login/handleHash'
+import { sendOTP } from '../components/login/otp'
 import toast, { Toaster } from 'react-hot-toast'
-import { updateLocalStorage } from './login/updateUser'
+import { updateLocalStorage } from '../components/login/updateUser'
 import { useRouter } from 'next/router'
 
 let g_setData

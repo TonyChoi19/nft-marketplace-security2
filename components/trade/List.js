@@ -1,4 +1,3 @@
-import React from 'react'
 let g_setData, g_setIsLoading
 let g_setNFTdata
 
