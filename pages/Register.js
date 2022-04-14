@@ -10,18 +10,32 @@ let g_setData
 
 const registerUser = async (e) => {
   e.preventDefault()
+
+  var R_Error = 1
+  if (e.target.username.value.includes('<') || e.target.username.value.includes('>')){
+    R_Error = 0
+    toast.error('username should not include < or >!')
+  }
+  else if (e.target.email.value.includes('<') || e.target.email.value.includes('>')){
+    R_Error = 0
+    toast.error('email cannot include < or >. Please use another one.')
+  }
+
+  var usernameRegex = e.target.username.value.replace(new RegExp('<[^>]*>', 'g'), '')
+  var emailRegex = e.target.email.value.replace(new RegExp('<[^>]*>', 'g'), '')
+
   const errors = await validate(
-    e.target.email.value,
-    e.target.username.value,
+    emailRegex,
+    usernameRegex,
     e.target.password.value
   )
-  if (Object.keys(errors).length === 0) {
+  if (Object.keys(errors).length === 0 && R_Error == 1) {
     const hashPassword = createHashPassword(64, 10000, 64, 'sha512')
     const hashedPassword = await hashPassword(e.target.password.value)
     const value =
-      e.target.username.value +
+      usernameRegex +
       ',' +
-      e.target.email.value +
+      emailRegex +
       ',' +
       hashedPassword.salt +
       ',' +
