@@ -50,7 +50,7 @@ const Header = () => {
           Collections
         </a>
 
-        <a className={style.headerItem} href="/nftModules/OwnedNFT">
+        <a className={style.headerItem} href="/OwnedNFT">
           MyNFTs
         </a>
 
