@@ -27,8 +27,8 @@ body {
   overflow-x: hidden;
 }
 
-@layer base{
-  body{
-    @apply bg-[#06202A] text-gray-300;
+@layer base {
+  body {
+    @apply bg-[#0000];
   }
 }

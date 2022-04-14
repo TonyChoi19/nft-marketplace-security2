@@ -34,7 +34,7 @@ export async function getStaticProps(context) {
       Process: 'UpdateData',
       Table: 'TABLE_USER',
       Columns: 'Balance',
-      Conditions: 'USER_ID = 41',
+      Conditions: 'USER_ID = 42',
       Values: 40,
       Orderby: null,
       Ordersort: null,

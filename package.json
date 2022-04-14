@@ -6,9 +6,6 @@
     "start": "next start"
   },
   "dependencies": {
-    "@3rdweb/hooks": "^1.9.2",
-    "@3rdweb/react": "^1.9.3",
-    "@3rdweb/sdk": "^1.42.0",
     "bcrypt": "^5.0.1",
     "buffer": "^6.0.3",
     "crypto-js": "^4.1.1",
