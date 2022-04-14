@@ -2,13 +2,13 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-center text-white">
+    <footer className="w- bottom-0 bg-gray-900 text-center text-white">
       <div className="px-6 pt-6">
-        <div className="mb-6 flex justify-center text-center">
+        <div className="mb-6 flex justify-center text-center ">
           <a
-            href="#!"
+            href="https://twitter.com/ethereum"
             type="button"
-            className="m-1 h-9 w-9 rounded-full border-2 border-white uppercase leading-normal text-white transition duration-150 ease-in-out hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0"
+            className="m-1 h-9 w-9 rounded-full border-2 border-white uppercase leading-normal text-white transition duration-150 ease-in-out hover:border-violet-700 hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0"
           >
             <svg
               aria-hidden="true"
@@ -28,9 +28,9 @@ const Footer = () => {
           </a>
 
           <a
-            href="#!"
+            href="https://www.instagram.com/ethereum_official/"
             type="button"
-            className="m-1 h-9 w-9 rounded-full border-2 border-white uppercase leading-normal text-white transition duration-150 ease-in-out hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0"
+            className="m-1 h-9 w-9 rounded-full border-2 border-white uppercase leading-normal text-white transition duration-150 ease-in-out hover:border-violet-700 hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0"
           >
             <svg
               aria-hidden="true"
@@ -50,9 +50,9 @@ const Footer = () => {
           </a>
 
           <a
-            href="#!"
+            href="https://www.linkedin.com/company/ethereum/"
             type="button"
-            className="m-1 h-9 w-9 rounded-full border-2 border-white uppercase leading-normal text-white transition duration-150 ease-in-out hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0"
+            className="m-1 h-9 w-9 rounded-full border-2 border-white uppercase leading-normal text-white transition duration-150 ease-in-out hover:border-violet-700 hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0"
           >
             <svg
               aria-hidden="true"
@@ -72,9 +72,9 @@ const Footer = () => {
           </a>
 
           <a
-            href="#!"
+            href="https://github.com/ethereum"
             type="button"
-            className="m-1 h-9 w-9 rounded-full border-2 border-white uppercase leading-normal text-white transition duration-150 ease-in-out hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0"
+            className="m-1 h-9 w-9 rounded-full border-2 border-white uppercase leading-normal text-white transition duration-150 ease-in-out hover:border-violet-700 hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0"
           >
             <svg
               aria-hidden="true"
@@ -97,7 +97,7 @@ const Footer = () => {
 
       <div className="bg-[#0000] p-4 text-center">
         © 2022 Copyright:
-        <a class="text-whitehite" href="/">
+        <a class="text-whitehite hover:text-[#1868b7]" href="/">
           {' '}
           NEXT-NFTs
         </a>

@@ -6,7 +6,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        uber:[ "uber_move", "sans-serif" ],
+        uber: ['uber_move', 'sans-serif'],
       },
     },
   },
