@@ -19,7 +19,7 @@ const Collections = () => {
       <Header />
       <div className={style.background}>
         <div className={style.infoContainer}>
-          <Link href="../nftModules/DopeNFTClub">
+          <Link href="../DopeNFTClub">
             <div className={style.pictureWrapper}>
               <img
                 className={style.clubPicture}
