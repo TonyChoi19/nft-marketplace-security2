@@ -1,3 +1,4 @@
+import React from 'react'
 const {Auth, LoginCredentials} = require('two-step-auth')
 
 async function sendOTP(emailId){

@@ -1,4 +1,4 @@
-import { Buffer } from 'buffer'
+import React from 'react'
 const crypto = require('crypto')
 const CryptoJS = require('crypto-js')
 const { promisify } = require('util')
