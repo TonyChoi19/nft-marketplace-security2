@@ -3,7 +3,7 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import { useState, useEffect } from 'react'
 import { check } from 'prettier'
-import { createHashPassword, isPasswordCorrect } from './query/handleHash'
+import { createHashPassword, isPasswordCorrect } from '../components/login/handleHash'
 import toast, { Toaster } from 'react-hot-toast'
 
 let g_setData
