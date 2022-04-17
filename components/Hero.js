@@ -54,7 +54,7 @@ const Hero = () => {
                 <button className={style.blueButton}>Explore</button>
               </Link>
               {/* Button to Owned NFTs */}
-              <Link href="/nftModules/OwnedNFT">
+              <Link href="/OwnedNFT">
                 <button className={style.greyButton}>Your NFTs</button>
               </Link>
             </div>
