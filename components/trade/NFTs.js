@@ -10,7 +10,7 @@ const style = {
   infoContainer: `p-3`,
   info: `flex justify-between text-white`,
   infoLeft: `flex-0.6`,
-  assetName: `font-bold text-xl`,
+  nftId: `font-bold text-xl`,
   infoRight: `flex-0.4 text-right`,
   priceTag: `font-semibold text-sm text-white`,
   priceValue: `flex items-center text-lg text-right font-bold`,
@@ -19,6 +19,7 @@ const style = {
   listButton: `font-lg mt-1 rounded-full bg-red-500 py-1 px-4 text-white hover:bg-red-700`,
 }
 
+//Input Prompt for listing price
 const inputPrompt = (nftId, userID) => {
   const price = parseFloat(prompt('Please set the price'), '0')
   if (!isNaN(price) && price > 0) {
@@ -43,23 +44,24 @@ const NFTs = ({ id, owner, onSale, price, collectionID, image }) => {
     setUser(JSON.parse(localStorage.getItem('g_userData')))
   }, [])
 
-  if (!user){
-    return(
+  //If the user haven't signed in, show the following
+  if (!user) {
+    return (
       <div className={style.purpleWrapper}>
         <Toaster />
         {/* NFT image */}
         <div className={style.imageContainer}>
           <img src={image} className={style.image} />
         </div>
-  
+
         {/* NFT description */}
         <div className={style.infoContainer}>
           <div className={style.info}>
             <div className={style.infoLeft}>
-              <div className={style.assetName}>#{id}</div>
+              <div className={style.nftId}>#{id}</div>
               <div className="text-blue-400">Owner@{owner}</div>
             </div>
-  
+
             {/* Show the price details */}
             {isListed && (
               <div className={style.infoRight}>
@@ -79,6 +81,7 @@ const NFTs = ({ id, owner, onSale, price, collectionID, image }) => {
     )
   }
 
+  //If the user signed in, show the following
   return (
     <div className={style.purpleWrapper}>
       <Toaster />
@@ -91,7 +94,7 @@ const NFTs = ({ id, owner, onSale, price, collectionID, image }) => {
       <div className={style.infoContainer}>
         <div className={style.info}>
           <div className={style.infoLeft}>
-            <div className={style.assetName}>#{id}</div>
+            <div className={style.nftId}>#{id}</div>
             <div className="text-blue-400">Owner@{owner}</div>
           </div>
 
@@ -142,6 +145,7 @@ const NFTs = ({ id, owner, onSale, price, collectionID, image }) => {
   )
 }
 
+//Buy function
 const buy = async (id, userID) => {
   if (confirm('Please click confirm to buy') == true) {
     const errors = await Buyfunction(id, userID)
@@ -159,6 +163,7 @@ const buy = async (id, userID) => {
   }
 }
 
+//List function
 const list = async (id, userID, price) => {
   const res = await Listfunction(id, userID, price)
   if (res && res.status == 'Success')
