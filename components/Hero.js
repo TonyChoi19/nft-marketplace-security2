@@ -6,25 +6,26 @@ import Typewriter from 'typewriter-effect'
 
 const style = {
   wrapper: `relative`,
-  container: `before:content-[''] bg-cover before:bg-red-500 before:absolute before:top-0 before:left-0 before:right-0 before:bottom-0 before:bg-[url('https://lh3.googleusercontent.com/DrCbMMM6J6KohH4c4YfCDcdzCWGaL-MrrhyiiBLpNtqR9wykTU9PRgRYeZL0ZuRaPhi0i__fQTQ3EBHt3Fc7zpSGla5USiu6urmR3UQ=w600')] before:bg-cover before:bg-center before:opacity-60 before:blur`,
+  container: `bg-cover before:absolute before:top-0 before:left-0 before:right-0 before:bottom-0 before:bg-[url('https://lh3.googleusercontent.com/DrCbMMM6J6KohH4c4YfCDcdzCWGaL-MrrhyiiBLpNtqR9wykTU9PRgRYeZL0ZuRaPhi0i__fQTQ3EBHt3Fc7zpSGla5USiu6urmR3UQ=w600')] before:bg-cover before:bg-center before:opacity-60 before:blur`,
   contentWrapper: `flex h-screen relative justify-center flex-wrap items-center`,
-  copyContainer: `w-1/2`,
+  splitter: `w-1/2`,
   title: `relative text-white text-[46px] font-semibold`,
-  description: `text-grey-500 container-[400px] text-2xl mt-[0.8rem] mb-[2.5rem]`,
+  description: `text-xl mt-4 mb-5`,
   buttonContainer: `flex`,
-  blueButton: `bg-blue-500 hover:bg-blue-700 relative text-lg font-semibold px-12 py-4 rounded-lg mr-5 text-[#e4e8ea] cursor-pointer`,
-  greyButton: `relative text-lg font-semibold px-12 py-4 bg-[#363840] rounded-lg mr-5 text-[#e4e8ea] hover:bg-[#4c505c] cursor-pointer`,
-  cardContainer: `rounded-[3rem] shadow-2xl`,
-  infoContainer: `h-20 bg-[#313438] p-4 rounded-b-lg flex items-center text-white shadow-2xl`,
+  blueButton: `bg-blue-500 hover:bg-blue-700 text-lg font-semibold px-12 py-4 rounded-lg mr-5 text-white`,
+  greyButton: `bg-gray-500 hover:bg-gray-700 text-lg font-semibold px-12 py-4 rounded-lg text-white `,
+  infoContainer: `bg-[#202020] p-4 rounded-b-lg flex items-center text-white shadow-2xl`,
   minter: `flex flex-col justify-center ml-4`,
 }
 
 const Hero = () => {
   return (
+    // Hero Page
     <div className={style.wrapper}>
       <div className={style.container}>
         <div className={style.contentWrapper}>
-          <div className={style.copyContainer}>
+          <div className={style.splitter}>
+            {/* Styled Title */}
             <div className={style.title}>
               <Typewriter
                 onInit={(typewriter) => {
@@ -38,21 +39,29 @@ const Hero = () => {
                 }}
               />
             </div>
+
+            {/* Website Desciption */}
             <div className={style.description}>
               Next-NFTs is one of the most popular NFT marketplace in the world.
               <br></br>
               Go start exploring!
             </div>
+
+            {/* Button */}
             <div className={style.buttonContainer}>
+              {/* Button to Collections */}
               <Link href="/Collections">
                 <button className={style.blueButton}>Explore</button>
               </Link>
+              {/* Button to Owned NFTs */}
               <Link href="/nftModules/OwnedNFT">
                 <button className={style.greyButton}>Your NFTs</button>
               </Link>
             </div>
           </div>
-          <div className={style.cardContainer}>
+
+          {/* NFT showcase */}
+          <div className="shadow-2xl">
             <img
               className="rounded-t-lg"
               src="https://lh3.googleusercontent.com/DrCbMMM6J6KohH4c4YfCDcdzCWGaL-MrrhyiiBLpNtqR9wykTU9PRgRYeZL0ZuRaPhi0i__fQTQ3EBHt3Fc7zpSGla5USiu6urmR3UQ=w600"
