@@ -28,14 +28,17 @@ const Signin = () => {
 
   const loginUser = async (e) => {
     e.preventDefault()
+    //Error if OTP is empty
     if (!e.target.otp.value) {
       toast.error('OTP is required!')
       return
     }
+    //Error if OTP is not clicked to send
     if (!oneTimePassword) {
-      toast.error('Please send OPT')
+      toast.error('Please send OTP')
       return
     }
+    //Input validation
     const errors = await validateUser(
       e.target.username.value,
       e.target.password.value
@@ -124,6 +127,7 @@ const Signin = () => {
     return errors
   }
 
+  //Send OTP
   const OTP = async () => {
     const username = document.getElementById('username').value
     const condition = "username = '" + username + "'"
@@ -180,6 +184,7 @@ const Signin = () => {
           <div class={style.infoContainer}>
             <form class={style.form} onSubmit={loginUser}>
               <div className="mb-4">
+                {/* username field */}
                 <label
                   class="text-md mb-2 block font-bold text-gray-700"
                   for="Username"
@@ -194,6 +199,7 @@ const Signin = () => {
                 />
               </div>
 
+              {/* password field */}
               <div className="mb-4">
                 <label
                   class="text-md mb-2 block font-bold text-gray-700"
@@ -209,10 +215,11 @@ const Signin = () => {
                 />
               </div>
 
+              {/* OTP field */}
               <div className="mb-6">
                 <label
                   class="text-md mb-2 block font-bold text-gray-700"
-                  for="password"
+                  for="OTP"
                 >
                   One-Time-Password (OTP)
                   <a
